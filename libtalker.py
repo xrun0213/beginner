@@ -7,7 +7,7 @@ import roslibpy
 system = platform.system()
 d = {'Darwin':'macOS', 'Linux':'Linux'}
 
-client = roslibpy.Ros(host='10.1.1.3', port=9090)
+client = roslibpy.Ros(host='10.1.1.5', port=9090)
 talker = roslibpy.Topic(client, '/chatter', 'std_msgs/String')
 
 def start_talking():    
@@ -18,6 +18,6 @@ def start_talking():
 
     talker.unadvertise()
 
-
+# client.run()
 client.on_ready(start_talking)
 client.run_forever()
